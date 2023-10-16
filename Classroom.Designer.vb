@@ -26,6 +26,7 @@ Partial Class Classrooms
         MenuToolStripMenuItem = New ToolStripMenuItem()
         BTN_AddRoom = New Button()
         GB_Classrooms = New GroupBox()
+        BTN_Edit = New Button()
         BTN_Delete = New Button()
         RoomListView = New ListView()
         room_id = New ColumnHeader()
@@ -69,6 +70,7 @@ Partial Class Classrooms
         ' 
         ' GB_Classrooms
         ' 
+        GB_Classrooms.Controls.Add(BTN_Edit)
         GB_Classrooms.Controls.Add(BTN_Delete)
         GB_Classrooms.Controls.Add(RoomListView)
         GB_Classrooms.Controls.Add(BTN_Search)
@@ -79,6 +81,18 @@ Partial Class Classrooms
         GB_Classrooms.TabIndex = 3
         GB_Classrooms.TabStop = False
         GB_Classrooms.Text = "Classrooms"
+        ' 
+        ' BTN_Edit
+        ' 
+        BTN_Edit.BackColor = Color.Green
+        BTN_Edit.BackgroundImage = My.Resources.Resources.edit
+        BTN_Edit.BackgroundImageLayout = ImageLayout.Stretch
+        BTN_Edit.Location = New Point(37, 22)
+        BTN_Edit.Name = "BTN_Edit"
+        BTN_Edit.Size = New Size(25, 23)
+        BTN_Edit.TabIndex = 4
+        BTN_Edit.UseVisualStyleBackColor = False
+        BTN_Edit.Visible = False
         ' 
         ' BTN_Delete
         ' 
@@ -161,7 +175,7 @@ Partial Class Classrooms
         CB_AddRoomType.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
         CB_AddRoomType.ForeColor = Color.Gray
         CB_AddRoomType.FormattingEnabled = True
-        CB_AddRoomType.Items.AddRange(New Object() {"LECTURE", "LABORATORY"})
+        CB_AddRoomType.Items.AddRange(New Object() {"LEC", "COM-LAB", "SCI-LAB"})
         CB_AddRoomType.Location = New Point(345, 451)
         CB_AddRoomType.Name = "CB_AddRoomType"
         CB_AddRoomType.Size = New Size(138, 29)
@@ -243,4 +257,5 @@ Partial Class Classrooms
     Friend WithEvents TB_AddCapacity As TextBox
     Friend WithEvents BTN_AddSave As Button
     Friend WithEvents BTN_AddCancel As Button
+    Friend WithEvents BTN_Edit As Button
 End Class

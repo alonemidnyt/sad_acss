@@ -34,3 +34,4 @@ C:\Users\Glyness\source\repos\SAD\bin\Debug\net6.0-windows\runtimes\win-x64\nati
 C:\Users\Glyness\source\repos\SAD\bin\Debug\net6.0-windows\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
 C:\Users\Glyness\source\repos\SAD\obj\Debug\net6.0-windows\SAD.vbproj.CopyComplete
 C:\Users\Glyness\source\repos\SAD\obj\Debug\net6.0-windows\SAD.Resources.resources
+C:\Users\Glyness\source\repos\SAD\obj\Debug\net6.0-windows\SAD.EditRoom.resources
