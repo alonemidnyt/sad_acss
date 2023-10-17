@@ -44,16 +44,10 @@ Public Class Classrooms
 
 
 
-    Private Sub TB_AddCapacity_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TB_AddCapacity.KeyPress
-        If (Not Char.IsDigit(e.KeyChar)) AndAlso e.KeyChar <> ControlChars.Back Then
-            e.Handled = True ' Suppress the character
-        End If
-    End Sub
-
-
     Public Sub RefreshListbox()
         RoomListView.Items.Clear()
         BTN_AddRoom.Visible = True
+        Dim tempRoom As String
 
         Using conn As New MySqlConnection(ConnectionString)
             conn.Open()
@@ -62,14 +56,29 @@ Public Class Classrooms
 
             Using cmd As New MySqlCommand(query, conn)
                 Using reader As MySqlDataReader = cmd.ExecuteReader
-
                     While reader.Read
                         Dim item As New ListViewItem(reader("room_id").ToString)
+                        tempRoom = reader("room_id").ToString
                         item.SubItems.Add(reader("room_type").ToString)
                         item.SubItems.Add(reader("capacity").ToString)
-                        'change this into a condition later
-                        item.SubItems.Add("Temporarily Not Available")
 
+                        Dim fetchQuery As String = "SELECT COUNT(*) FROM room_availability WHERE room_id = @roomId AND available = 1;"
+                        Using fetchConn As New MySqlConnection(ConnectionString)
+                            fetchConn.Open()
+
+                            Using fetchCmd As New MySqlCommand(fetchQuery, fetchConn)
+
+                                fetchCmd.Parameters.AddWithValue("@roomId", tempRoom)
+
+                                Dim availableCount As Integer = Convert.ToInt32(fetchCmd.ExecuteScalar)
+
+                                If availableCount > 0 Then
+                                    item.SubItems.Add("Slot Available")
+                                Else
+                                    item.SubItems.Add("Not Available")
+                                End If
+                            End Using
+                        End Using
                         RoomListView.Items.Add(item)
                     End While
                 End Using
@@ -144,6 +153,7 @@ Public Class Classrooms
             Return
         End If
         Dim searchQuery As String = TB_Search.Text
+        Dim tempRoom As String
 
         Dim query As String = "SELECT * FROM rooms WHERE room_id LIKE @searchText"
 
@@ -162,10 +172,26 @@ Public Class Classrooms
                 RoomListView.Items.Clear()
                 For Each row As DataRow In dt.Rows
                     Dim item As New ListViewItem(row("room_id").ToString)
+                    tempRoom = row("room_id").ToString
                     item.SubItems.Add(row("room_type").ToString)
                     item.SubItems.Add(row("capacity").ToString)
-                    item.SubItems.Add("Temporarily Not Available")
+                    Dim fetchQuery As String = "SELECT COUNT(*) FROM room_availability WHERE room_id = @roomId AND available = 1;"
+                    Using fetchConn As New MySqlConnection(ConnectionString)
+                        fetchConn.Open()
 
+                        Using fetchCmd As New MySqlCommand(fetchQuery, fetchConn)
+
+                            fetchCmd.Parameters.AddWithValue("@roomId", tempRoom)
+
+                            Dim availableCount As Integer = Convert.ToInt32(fetchCmd.ExecuteScalar)
+
+                            If availableCount > 0 Then
+                                item.SubItems.Add("Slot Available")
+                            Else
+                                item.SubItems.Add("Not Available")
+                            End If
+                        End Using
+                    End Using
                     RoomListView.Items.Add(item)
                 Next
             End Using

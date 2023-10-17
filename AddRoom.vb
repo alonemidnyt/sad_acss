@@ -143,7 +143,8 @@ Public Class AddRoom
         Dim roomType As String = CB_RoomType.Text.ToUpper
         Dim roomCapacity As String = TB_Capacity.Text
 
-        Dim selectedDays As New List(Of String)
+        Dim selectedDays As New List(Of Integer)
+        Dim selectedTimeSlot As New List(Of Integer)
 
         Using conn As New MySqlConnection(ConnectionString)
             conn.Open()
@@ -164,7 +165,7 @@ Public Class AddRoom
         End Using
 
         Dim result As DialogResult
-        result = MessageBox.Show("Room Information:" & vbCrLf & vbCrLf & "Name: " & roomName & vbCrLf & "Type: " & roomType & vbCrLf & "Capacity: " & capacity & vbCrLf, "Save information?", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question)
+        result = MessageBox.Show("Room Information:" & vbCrLf & vbCrLf & "Name: " & roomName & vbCrLf & "Type: " & roomType & vbCrLf & "Capacity: " & roomCapacity & vbCrLf, "Save information?", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question)
         If result = DialogResult.Yes Then
             Using conn As New MySqlConnection(ConnectionString)
                 conn.Open()
@@ -176,8 +177,27 @@ Public Class AddRoom
 
                     cmd.ExecuteNonQuery()
                 End Using
+
+
+                For Each dayIndex As Integer In CLB_DayAvail.CheckedIndices
+                    For Each timeIndex As Integer In CLB_TimeAvail.CheckedIndices
+                        Dim available As Integer = 1
+
+                        Dim insertQuery As String = "INSERT INTO room_availability (room_id, day_id, slot_id, available) VALUES (@roomId, @dayId, @slotId, @avail);"
+
+                        Using insertCmd As New MySqlCommand(insertQuery, conn)
+                            insertCmd.Parameters.AddWithValue("@roomId", roomName)
+                            insertCmd.Parameters.AddWithValue("@dayId", dayIndex)
+                            insertCmd.Parameters.AddWithValue("slotId", timeIndex)
+                            insertCmd.Parameters.AddWithValue("@avail", available)
+
+                            insertCmd.ExecuteNonQuery()
+                        End Using
+                    Next
+                Next
             End Using
         End If
+        Me.Close()
     End Sub
 
     Private Sub TB_Capacity_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TB_Capacity.KeyPress
