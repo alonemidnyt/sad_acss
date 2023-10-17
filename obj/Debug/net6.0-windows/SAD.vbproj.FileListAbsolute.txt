@@ -35,3 +35,5 @@ C:\Users\Glyness\source\repos\SAD\bin\Debug\net6.0-windows\runtimes\browser\lib\
 C:\Users\Glyness\source\repos\SAD\obj\Debug\net6.0-windows\SAD.vbproj.CopyComplete
 C:\Users\Glyness\source\repos\SAD\obj\Debug\net6.0-windows\SAD.Resources.resources
 C:\Users\Glyness\source\repos\SAD\obj\Debug\net6.0-windows\SAD.EditRoom.resources
+C:\Users\Glyness\source\repos\SAD\obj\Debug\net6.0-windows\SAD.AddRoom.resources
+C:\Users\Glyness\source\repos\SAD\obj\Debug\net6.0-windows\SAD.Faculty.resources
