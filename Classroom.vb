@@ -122,9 +122,8 @@ Public Class Classrooms
             Dim roomCapacity As String = selectedRoom.SubItems(2).Text
             Dim roomStatus As String = selectedRoom.SubItems(3).Text
 
-
-            MsgBox(roomName)
-
+            Dim roomTimetable As New RoomTimeTable
+            roomTimetable.RoomID(roomName, roomType)
         End If
     End Sub
 

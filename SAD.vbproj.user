@@ -13,5 +13,8 @@
     <Compile Update="Faculty.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="RoomTimeTable.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

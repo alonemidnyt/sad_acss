@@ -37,3 +37,4 @@ C:\Users\Glyness\source\repos\SAD\obj\Debug\net6.0-windows\SAD.Resources.resourc
 C:\Users\Glyness\source\repos\SAD\obj\Debug\net6.0-windows\SAD.EditRoom.resources
 C:\Users\Glyness\source\repos\SAD\obj\Debug\net6.0-windows\SAD.AddRoom.resources
 C:\Users\Glyness\source\repos\SAD\obj\Debug\net6.0-windows\SAD.Faculty.resources
+C:\Users\Glyness\source\repos\SAD\obj\Debug\net6.0-windows\SAD.RoomTimeTable.resources
