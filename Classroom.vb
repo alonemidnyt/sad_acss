@@ -7,9 +7,6 @@ Public Class Classrooms
     Dim cmd As MySqlCommand
     Dim ConnectionString As String = "Server=localhost;Database=acss;userid=root;password=;"
 
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        RefreshListbox()
-    End Sub
 
     Private Sub RoomListView_ItemSelectionChanged(sender As Object, e As ListViewItemSelectionChangedEventArgs) Handles RoomListView.ItemSelectionChanged
         If e.IsSelected Then
@@ -195,5 +192,17 @@ Public Class Classrooms
                 Next
             End Using
         End Using
+    End Sub
+
+    Private Sub FacultyToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FacultyToolStripMenuItem.Click
+        Me.Close()
+    End Sub
+
+    Private Sub Classrooms_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Faculty.Show()
+    End Sub
+
+    Private Sub Classrooms_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        RefreshListbox()
     End Sub
 End Class

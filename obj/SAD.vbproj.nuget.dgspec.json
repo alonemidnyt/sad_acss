@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Glyness\\source\\repos\\SAD\\SAD.vbproj": {}
+    "C:\\Users\\ryanr\\Documents\\GitHub\\sad_acss\\SAD.vbproj": {}
   },
   "projects": {
-    "C:\\Users\\Glyness\\source\\repos\\SAD\\SAD.vbproj": {
+    "C:\\Users\\ryanr\\Documents\\GitHub\\sad_acss\\SAD.vbproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Glyness\\source\\repos\\SAD\\SAD.vbproj",
+        "projectUniqueName": "C:\\Users\\ryanr\\Documents\\GitHub\\sad_acss\\SAD.vbproj",
         "projectName": "SAD",
-        "projectPath": "C:\\Users\\Glyness\\source\\repos\\SAD\\SAD.vbproj",
-        "packagesPath": "C:\\Users\\Glyness\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Glyness\\source\\repos\\SAD\\obj\\",
+        "projectPath": "C:\\Users\\ryanr\\Documents\\GitHub\\sad_acss\\SAD.vbproj",
+        "packagesPath": "C:\\Users\\ryanr\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ryanr\\Documents\\GitHub\\sad_acss\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Glyness\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ryanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

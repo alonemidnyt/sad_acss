@@ -41,10 +41,12 @@ Partial Class Classrooms
         ' 
         ' MenuStrip1
         ' 
+        MenuStrip1.ImageScalingSize = New Size(20, 20)
         MenuStrip1.Items.AddRange(New ToolStripItem() {MenuToolStripMenuItem})
         MenuStrip1.Location = New Point(0, 0)
         MenuStrip1.Name = "MenuStrip1"
-        MenuStrip1.Size = New Size(800, 24)
+        MenuStrip1.Padding = New Padding(7, 3, 0, 3)
+        MenuStrip1.Size = New Size(914, 30)
         MenuStrip1.TabIndex = 1
         MenuStrip1.Text = "MenuStrip1"
         ' 
@@ -52,20 +54,21 @@ Partial Class Classrooms
         ' 
         MenuToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {FacultyToolStripMenuItem})
         MenuToolStripMenuItem.Name = "MenuToolStripMenuItem"
-        MenuToolStripMenuItem.Size = New Size(50, 20)
+        MenuToolStripMenuItem.Size = New Size(60, 24)
         MenuToolStripMenuItem.Text = "Menu"
         ' 
         ' FacultyToolStripMenuItem
         ' 
         FacultyToolStripMenuItem.Name = "FacultyToolStripMenuItem"
-        FacultyToolStripMenuItem.Size = New Size(112, 22)
+        FacultyToolStripMenuItem.Size = New Size(137, 26)
         FacultyToolStripMenuItem.Text = "Faculty"
         ' 
         ' BTN_AddRoom
         ' 
-        BTN_AddRoom.Location = New Point(68, 18)
+        BTN_AddRoom.Location = New Point(78, 24)
+        BTN_AddRoom.Margin = New Padding(3, 4, 3, 4)
         BTN_AddRoom.Name = "BTN_AddRoom"
-        BTN_AddRoom.Size = New Size(173, 31)
+        BTN_AddRoom.Size = New Size(198, 41)
         BTN_AddRoom.TabIndex = 2
         BTN_AddRoom.Text = "Add Classroom"
         BTN_AddRoom.UseVisualStyleBackColor = True
@@ -77,9 +80,11 @@ Partial Class Classrooms
         GB_Classrooms.Controls.Add(BTN_Delete)
         GB_Classrooms.Controls.Add(RoomListView)
         GB_Classrooms.Controls.Add(TB_Search)
-        GB_Classrooms.Location = New Point(12, 27)
+        GB_Classrooms.Location = New Point(14, 36)
+        GB_Classrooms.Margin = New Padding(3, 4, 3, 4)
         GB_Classrooms.Name = "GB_Classrooms"
-        GB_Classrooms.Size = New Size(776, 453)
+        GB_Classrooms.Padding = New Padding(3, 4, 3, 4)
+        GB_Classrooms.Size = New Size(887, 604)
         GB_Classrooms.TabIndex = 3
         GB_Classrooms.TabStop = False
         GB_Classrooms.Text = "Classrooms"
@@ -89,9 +94,10 @@ Partial Class Classrooms
         BTN_Edit.BackColor = Color.Green
         BTN_Edit.BackgroundImage = My.Resources.Resources.edit
         BTN_Edit.BackgroundImageLayout = ImageLayout.Stretch
-        BTN_Edit.Location = New Point(37, 22)
+        BTN_Edit.Location = New Point(42, 29)
+        BTN_Edit.Margin = New Padding(3, 4, 3, 4)
         BTN_Edit.Name = "BTN_Edit"
-        BTN_Edit.Size = New Size(25, 23)
+        BTN_Edit.Size = New Size(29, 31)
         BTN_Edit.TabIndex = 4
         BTN_Edit.UseVisualStyleBackColor = False
         BTN_Edit.Visible = False
@@ -102,9 +108,10 @@ Partial Class Classrooms
         BTN_Delete.BackgroundImage = My.Resources.Resources.delete
         BTN_Delete.BackgroundImageLayout = ImageLayout.Stretch
         BTN_Delete.ForeColor = SystemColors.ControlLightLight
-        BTN_Delete.Location = New Point(6, 22)
+        BTN_Delete.Location = New Point(7, 29)
+        BTN_Delete.Margin = New Padding(3, 4, 3, 4)
         BTN_Delete.Name = "BTN_Delete"
-        BTN_Delete.Size = New Size(25, 23)
+        BTN_Delete.Size = New Size(29, 31)
         BTN_Delete.TabIndex = 3
         BTN_Delete.UseVisualStyleBackColor = False
         BTN_Delete.Visible = False
@@ -115,10 +122,11 @@ Partial Class Classrooms
         RoomListView.Columns.AddRange(New ColumnHeader() {room_id, room_type, capacity, status})
         RoomListView.FullRowSelect = True
         RoomListView.HeaderStyle = ColumnHeaderStyle.Nonclickable
-        RoomListView.Location = New Point(6, 51)
+        RoomListView.Location = New Point(7, 68)
+        RoomListView.Margin = New Padding(3, 4, 3, 4)
         RoomListView.Name = "RoomListView"
         RoomListView.ShowGroups = False
-        RoomListView.Size = New Size(764, 402)
+        RoomListView.Size = New Size(873, 535)
         RoomListView.TabIndex = 2
         RoomListView.UseCompatibleStateImageBehavior = False
         RoomListView.View = View.Details
@@ -146,21 +154,23 @@ Partial Class Classrooms
         ' TB_Search
         ' 
         TB_Search.ForeColor = Color.Gray
-        TB_Search.Location = New Point(439, 22)
+        TB_Search.Location = New Point(502, 29)
+        TB_Search.Margin = New Padding(3, 4, 3, 4)
         TB_Search.Name = "TB_Search"
-        TB_Search.Size = New Size(331, 23)
+        TB_Search.Size = New Size(378, 27)
         TB_Search.TabIndex = 0
         TB_Search.Text = "Search Here"
         ' 
         ' Classrooms
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(800, 492)
+        ClientSize = New Size(914, 656)
         Controls.Add(GB_Classrooms)
         Controls.Add(MenuStrip1)
         FormBorderStyle = FormBorderStyle.FixedSingle
         MainMenuStrip = MenuStrip1
+        Margin = New Padding(3, 4, 3, 4)
         MaximizeBox = False
         Name = "Classrooms"
         StartPosition = FormStartPosition.CenterScreen
